@@ -1,0 +1,10 @@
+project: savantenvs/minmea
+target: fuzz_minmea
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_minmea/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_minmea
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_minmea/fuzz_minmea.dict
+    timeout: 5
